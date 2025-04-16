@@ -34,7 +34,7 @@ The project is built using the following technologies:
 - **Authentication**:
   - API key-based authentication for secure access.
 - **Scheduler**:
-  - Automatically run the ETL job every 5 minutes using `APScheduler`.
+  - Automatically run the ETL job every 1 hour using `APScheduler`.
 
 ## Project Structure
 
