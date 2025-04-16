@@ -38,7 +38,7 @@ The project is built using the following technologies:
 
 ## Project Structure
 ```
-blackkite_case/                     # Root directory of the project
+hackernews_stories/                 # Root directory of the project
 ├── app/                            # Main application directory
 │   ├── db/                         # Database-related files
 │   │   ├── __init__.py             # Empty file to mark this directory as a Python package
