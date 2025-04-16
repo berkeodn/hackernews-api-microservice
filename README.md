@@ -38,7 +38,7 @@ The project is built using the following technologies:
 
 ## Project Structure
 ```
-hackernews_microservice/            # Root directory of the project
+hackernews-api-microservice/        # Root directory of the project
 ├── app/                            # Main application directory
 │   ├── db/                         # Database-related files
 │   │   ├── __init__.py             # Empty file to mark this directory as a Python package
@@ -76,8 +76,8 @@ hackernews_microservice/            # Root directory of the project
 1\. Clone the repository:
 
 ``` bash
-git clone [<repository-url>](https://github.com/berkeodn/hackernews-api-microservice.git)
-cd blackkite_case
+git clone https://github.com/berkeodn/hackernews-api-microservice.git
+cd hackernews-api-microservice
 ```
 
 2\. Create a .env file with the following content (update values as needed):
