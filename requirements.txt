@@ -1,0 +1,9 @@
+psycopg2-binary
+requests
+sqlalchemy
+python-dotenv
+psycopg2
+fastapi
+uvicorn
+apscheduler
+slowapi

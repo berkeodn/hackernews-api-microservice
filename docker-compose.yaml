@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:latest  # Use the latest PostgreSQL image
+    container_name: hackernews_postgres
+    restart: always  # Restart the container if it stops
+    environment:
+      POSTGRES_USER: hacker  # Set your PostgreSQL username
+      POSTGRES_PASSWORD: news  # Set your PostgreSQL password
+      POSTGRES_DB: hackernews  # Set your PostgreSQL database name
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5435:5432"  # Expose port 5435 for PostgreSQL
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persist data in case container restarts
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hacker -d hackernews"]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin1
+    restart: on-failure # Restart the container if it fails
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com  # Set the default pgAdmin admin email
+      PGADMIN_DEFAULT_PASSWORD: admin  # Set the default pgAdmin admin password
+    ports:
+      - "80:80"  # Expose pgAdmin UI on port 80
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+  fastapi_app:
+    build:
+      context: .
+    container_name: fastapi_microservice
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    env_file:
+      - .env  # Load the environment variables from the .env file 
+
+volumes:
+  pgdata:
+  pgadmin-data:
+  
