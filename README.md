@@ -37,7 +37,7 @@ The project is built using the following technologies:
   - Automatically run the ETL job every 1 hour using `APScheduler`.
 
 ## Project Structure
-
+```
 blackkite_case/                     # Root directory of the project
 ├── app/                            # Main application directory
 │   ├── db/                         # Database-related files
@@ -63,7 +63,7 @@ blackkite_case/                     # Root directory of the project
 ├── requirements.txt                # List of Python dependencies for the project
 ├── .env                            # Environment variables for configuration (e.g., database credentials, API URLs)
 ├── .dockerignore                   # Files and directories to exclude from Docker builds
-
+```
 ## Installation
 
 ### Prerequisites
